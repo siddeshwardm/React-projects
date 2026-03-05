@@ -1,0 +1,165 @@
+/* Root Layout */
+#root {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: clamp(1rem, 4vw, 2rem);
+}
+
+/* Body */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #121212;
+  color: white;
+}
+
+/* App Layout */
+.app {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  --content-width: min(700px, 100%);
+}
+
+h1 {
+  margin-bottom: 30px;
+  font-size: 48px;
+}
+
+/* Progress Bar */
+.progress-wrapper {
+  width: var(--content-width);
+  margin-bottom: 40px;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #444;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #4caf50;
+}
+
+/* Flashcard Layout */
+.flashcard-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: var(--content-width);
+}
+
+/* Card Container */
+.flashcard-container {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 600 / 260;
+  perspective: 1000px;
+  margin: 0 auto 15px auto;
+}
+
+/* Card */
+.flashcard {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.flashcard.flipped {
+  transform: rotateY(180deg);
+}
+
+/* Card Faces */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 20px;
+  padding: clamp(18px, 4vw, 40px);
+  box-sizing: border-box;
+
+  background: #e6e6e6;
+  color: #111;
+  font-size: 22px;
+  text-align: center;
+
+  backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+/* Show Answer Button */
+.show-answer-btn {
+  margin-top: 0;
+  padding: 10px 22px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #2b2b2b;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+.show-answer-btn:hover {
+  background: #333;
+}
+
+/* Navigation Buttons */
+.controls-row {
+  width: var(--content-width);
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+
+.nav-buttons {
+  margin-top: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.nav-buttons button {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  background: #1e1e1e;
+  color: white;
+}
+
+.nav-buttons button:hover {
+  background: #333;
+}
+
+@media (max-width: 420px) {
+  .controls-row {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
