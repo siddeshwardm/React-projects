@@ -1,1 +1,1 @@
-This Repository contains all the basic react projects
+This Repository contains all the basic React.js projects
