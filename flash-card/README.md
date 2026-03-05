@@ -1,16 +1,75 @@
-# React + Vite
+# Flash Card (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple flashcard web app for practicing JavaScript fundamentals. It shows one question at a time, lets you flip to reveal the answer, and tracks your progress as you move through the deck.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Deck size:** 20 JavaScript Q&A cards
+- **Interaction:** Show/Hide Answer (flip animation)
+- **Navigation:** Previous/Next buttons
+- **Progress:** Progress bar with percent and `current of total`
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- Plain CSS
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- Node.js 18+ recommended
+
+### Install
+
+```bash
+npm install
+```
+
+### Run locally
+
+```bash
+npm run dev
+```
+
+Open the URL printed by Vite (commonly `http://127.0.0.1:5173/`).
+
+## Scripts
+
+- `npm run dev` — start the dev server
+- `npm run build` — build for production
+- `npm run preview` — preview the production build
+- `npm run lint` — run ESLint
+
+## Project Structure
+
+```text
+src/
+	components/
+		Flashcard.jsx
+		Navigation.jsx
+		ProgressBar.jsx
+	data/
+		flashcards.jsx
+	App.jsx
+	App.css
+	main.jsx
+```
+
+## Customizing the Deck
+
+Edit `src/data/flashcards.jsx` to add/remove flashcards. Each entry is:
+
+```js
+{
+	question: "...",
+	answer: "..."
+}
+```
+
+## Notes
+
+- The flashcard keeps a consistent size before/after flipping.
+- The flip state resets when moving to a different card.
+
