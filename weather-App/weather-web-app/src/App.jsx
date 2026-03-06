@@ -5,7 +5,7 @@ import HourlyForecast from "./components/HourlyForecast";
 import SearchBar from "./components/SearchBar";
 import Loader from "./components/Loader";
 
-const API_KEY = "V9VDBVQ5H8M8AGJ6DN9EB4WFK";
+const API_KEY = import.meta.env.VITE_VISUAL_CROSSING_API_KEY;
 
 function App() {
 
@@ -16,6 +16,11 @@ function App() {
   const fetchWeather = async (location) => {
 
     try{
+
+      if(!API_KEY){
+        alert("error.");
+        return;
+      }
 
       setLoading(true);
 

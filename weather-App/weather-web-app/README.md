@@ -48,13 +48,13 @@ In the current code, the API key is defined in the app source. For production (a
 
 ### Recommended: move key to `.env`
 
-1) Create a `.env` file in the project root:
+1) Create a `.env` file in the project root (you can copy from `.env.example`):
 
 ```bash
 VITE_VISUAL_CROSSING_API_KEY=your_key_here
 ```
 
-2) Update the code to read it via `import.meta.env.VITE_VISUAL_CROSSING_API_KEY`.
+2) The app reads it via `import.meta.env.VITE_VISUAL_CROSSING_API_KEY`.
 
 Note: Vite only exposes variables prefixed with `VITE_` to the browser.
 
