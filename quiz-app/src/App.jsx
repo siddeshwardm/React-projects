@@ -4,6 +4,7 @@ import StartScreen from "./components/StartScreen";
 import QuestionCard from "./components/QuestionCard";
 import ResultScreen from "./components/ResultScreen";
 import { questions } from "./data/questions";
+import Snowfall from 'react-snowfall';
 
 function App() {
 
@@ -52,11 +53,13 @@ function App() {
     return <ResultScreen score={score} wrong={wrong} />;
 
   return (
+    <>
+    <Snowfall color="#82C3D9" />
     <QuestionCard
-    key={currentQuestion}
-    questionData={questions[currentQuestion]}
-    handleAnswer={handleAnswer}
-  />
+      key={currentQuestion}
+      questionData={questions[currentQuestion]}
+      handleAnswer={handleAnswer} />
+      </>
   );
 }
 
