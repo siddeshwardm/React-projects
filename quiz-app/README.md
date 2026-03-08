@@ -89,6 +89,12 @@ Each item uses this shape:
 }
 ```
 
+### Try Snowfall Effect
+
+```bash
+npm install react-snowfall
+```
+
 ### Change Theme Colors
 
 The theme uses CSS variables defined in `src/index.css` (background + palette) and component styles in `src/App.css` (card/buttons).
