@@ -72,4 +72,5 @@ Edit `src/data/flashcards.jsx` to add/remove flashcards. Each entry is:
 
 - The flashcard keeps a consistent size before/after flipping.
 - The flip state resets when moving to a different card.
+- This project was implemented with the help of - roadmap.sh
 
